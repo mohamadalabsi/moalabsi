@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateY(-28px);
 }
 
 .intro-block {
@@ -123,6 +124,7 @@
   .intro-simulation {
     display: flex;
     flex-shrink: 0;
+    transform: translateY(-12px);
   }
 
   .intro-block {
@@ -179,6 +181,10 @@
 
   .intro-subtitle {
     font-size: 20px;
+  }
+
+  .intro-simulation {
+    transform: translateY(-8px);
   }
 
   .intro-desc {
