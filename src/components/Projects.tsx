@@ -29,7 +29,7 @@ class Projects extends React.Component<any, any> {
         techStack: "NextJs (React), Node.js , Supabase , OpenAI API , VAPI API , Clerk",
         link: "https://github.com/mohamadalabsi/converso",
         open: "https://converso-blush-six.vercel.app",
-        image: "/assets/Converso.png",
+        image: "/assets/converso.png",
       },
       "Fullstack-Dashboard": {
         title: "Fullstack-Dashboard",
