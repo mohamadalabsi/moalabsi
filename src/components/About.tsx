@@ -20,12 +20,12 @@ class About extends React.Component<any, any> {
     const one = (
       <p>
         I am currently a <b>Software Engineer</b> at
-        <a href="https://www.linkedin.com/company/exyte-group/" target="_blank"> Exyte</a>, where I help build
+        <a href="https://www.linkedin.com/company/exyte-group/" target="_blank" rel="noreferrer"> Exyte</a>, where I help build
         Software Applications . Previously, I was at
-         <a href="https://www.linkedin.com/company/pharmaplan-ttp-ag/" target="_blank"> Pharmaplan</a>  , At the 
+         <a href="https://www.linkedin.com/company/pharmaplan-ttp-ag/" target="_blank" rel="noreferrer"> Pharmaplan</a>  , At the 
         same time, I am undertaking a full-time <b> Bachelor's of Science</b> in{" "}
         <b>Software Engineering / computer science </b>at{" "}
-        <a href="https://www.frankfurt-university.de/" target="_blank">
+        <a href="https://www.frankfurt-university.de/" target="_blank" rel="noreferrer">
           Frankfurt University of Applied Sciences
         </a>.
       </p>

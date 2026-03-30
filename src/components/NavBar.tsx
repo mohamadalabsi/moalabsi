@@ -2,7 +2,6 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import BorderColorIcon from "@material-ui/icons/BorderColor";
 import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -26,12 +25,13 @@ class NavBar extends React.Component<any, any> {
               <Nav.Link href="mailto:mohamadalabsi2001@icloud.com">
                 <EmailRoundedIcon style={{ fontSize: 20 }}></EmailRoundedIcon>
               </Nav.Link>
-              <Nav.Link href="https://github.com/mohamadalabsi" target="_blank">
+              <Nav.Link href="https://github.com/mohamadalabsi" target="_blank" rel="noreferrer">
                 <GitHubIcon style={{ fontSize: 19 }}></GitHubIcon>
               </Nav.Link>
               <Nav.Link
                 href="https://www.linkedin.com/in/mohammad-al-absi/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <LinkedInIcon style={{ fontSize: 21 }}></LinkedInIcon>
               </Nav.Link>
