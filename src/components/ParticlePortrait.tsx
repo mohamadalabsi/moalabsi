@@ -11,19 +11,36 @@ const ParticlePortrait = () => {
   useEffect(() => {
     const updateSize = () => {
       const width = window.innerWidth;
+      const viewportHeight =
+        window.visualViewport?.height ?? window.innerHeight;
+      let nextSize;
 
       if (width <= 480) {
-        setSize(Math.min(220, width - 40));
+        const maxByWidth = width - 40;
+        const maxByHeight = viewportHeight * 0.36;
+        nextSize = Math.max(150, Math.min(220, maxByWidth, maxByHeight));
       } else if (width <= 768) {
-        setSize(Math.min(280, width - 60));
+        const maxByWidth = width - 60;
+        const maxByHeight = viewportHeight * 0.42;
+        nextSize = Math.max(180, Math.min(280, maxByWidth, maxByHeight));
       } else {
-        setSize(400);
+        nextSize = 400;
       }
+
+      setSize((prevSize) => (prevSize === nextSize ? prevSize : nextSize));
     };
 
     updateSize();
     window.addEventListener("resize", updateSize);
-    return () => window.removeEventListener("resize", updateSize);
+    const visualViewport = window.visualViewport;
+    visualViewport?.addEventListener("resize", updateSize);
+    window.addEventListener("orientationchange", updateSize);
+
+    return () => {
+      window.removeEventListener("resize", updateSize);
+      visualViewport?.removeEventListener("resize", updateSize);
+      window.removeEventListener("orientationchange", updateSize);
+    };
   }, []);
 
   useEffect(() => {
@@ -37,12 +54,19 @@ const ParticlePortrait = () => {
     canvas.height = canvasHeight;
 
     let animationId;
+    let cancelled = false;
+
+    imageLoadedRef.current = false;
+    linesRef.current = [];
+    startTimeRef.current = null;
 
     const img = new Image();
     img.crossOrigin = "Anonymous";
     img.src = "/profile.PNG";
 
     img.onload = () => {
+      if (cancelled) return;
+
       const offscreen = document.createElement("canvas");
       const offCtx = offscreen.getContext("2d");
       offscreen.width = canvasWidth;
@@ -68,6 +92,8 @@ const ParticlePortrait = () => {
 
       const lines = [];
       const rowGap = size <= 280 ? 5 : 6;
+      const scatterRange =
+        size <= 280 ? Math.max(80, size * 0.45) : Math.max(120, size * 0.75);
 
       for (let y = 0; y < canvasHeight; y += rowGap) {
         let x = 0;
@@ -85,8 +111,8 @@ const ParticlePortrait = () => {
               3 + brightness * (size <= 280 ? 8 : 15)
             );
 
-            const scatterX = (Math.random() - 0.5) * 300;
-            const scatterY = (Math.random() - 0.5) * 300;
+            const scatterX = (Math.random() - 0.5) * scatterRange;
+            const scatterY = (Math.random() - 0.5) * scatterRange;
 
             lines.push({
               x: x + scatterX,
@@ -118,7 +144,7 @@ const ParticlePortrait = () => {
 
       ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 
-      if (!imageLoadedRef.current) return;
+      if (!imageLoadedRef.current || !startTimeRef.current) return;
 
       const lines = linesRef.current;
       const mouse = mouseRef.current;
@@ -198,6 +224,7 @@ const ParticlePortrait = () => {
     draw();
 
     return () => {
+      cancelled = true;
       cancelAnimationFrame(animationId);
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseleave", handleLeave);

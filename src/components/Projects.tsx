@@ -25,7 +25,7 @@ class Projects extends React.Component<any, any> {
       "Converso": {
         title: "Converso",
         desc:
-         "Full-stack AI SaaS application that uses the OpenAI API , Personal education Platform",
+         "Full-stack AI SaaS application that uses the OpenAI API , your Personal education Platform",
         techStack: "NextJs (React), Node.js , Supabase , OpenAI API , VAPI API , Clerk",
         link: "https://github.com/mohamadalabsi/converso",
         open: "https://converso-blush-six.vercel.app",
@@ -54,7 +54,7 @@ class Projects extends React.Component<any, any> {
       "Patient Management System Project": {
         desc:
           "Developed a scalable microservices-based Patient Management System with secure authentication, centralized logging, and efficient inter-service communication Implemented robust APIs, testing, and cloud-based deployment to ensure reliability, performance, and scalability.",
-        techStack: "Java ,Spring Boot , microservices , AWS ECS , load balancers, RDS , kafka , gRPC , docker, CI/CD , unit and integration testing",
+        techStack: "Java ,Spring Boot , microservices , AWS ECS VPC RDS load balancers, RDS , kafka , gRPC , docker, CI/CD , unit and integration testing",
         link: "https://github.com/mohamadalabsi/Patient-Management.git",
       },
       "Drone Simulation Project": {
@@ -64,7 +64,7 @@ class Projects extends React.Component<any, any> {
       },
       "E-Commerce Web App": {
         desc:
-          "Developed a full-stack e-commerce web application using Spring Boot to build secure RESTful APIs for product,order, and user management with  backend business logic,",
+          "Developed a full-stack E-Commerce web application using Spring Boot to build secure RESTful APIs for product,order, and user management with  backend business logic.",
         techStack: "Java , Spring Boot , PostgreSQL",
         link:
           "https://github.com/mohamadalabsi/E-Commerce-Web-App.git",

@@ -165,9 +165,17 @@
   }
   
   .carousel-inner {
-    height: 350px;
+    height: 410px;
     border-radius: 12px;
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 3px 10px 0 rgb(0 0 0 / 19%);
+    overflow: hidden;
+  }
+
+  .carousel-item {
+    height: 100%;
+    background-color: var(--light-navy);
+    border-radius: 12px;
+    overflow: hidden;
   }
   
   .carousel-inner:hover {
@@ -176,6 +184,8 @@
   
   .carousel img {
     object-fit: cover;
+       height: 190px;
+    display: block;
   }
   
   .carousel-caption {
@@ -195,24 +205,24 @@
   
   .carousel-mobile-info {
     display: block;
-    padding: 20px 16px;
+    padding: 12px 14px 10px;
     background-color: var(--light-navy);
   }
   
   .carousel-mobile-info h3 {
     font-family: "NTR", sans-serif;
     color: var(--lightest-slate);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    margin: 0 0 12px 0;
+   margin: 0 0 6px 0;
   }
   
   .mobile-desc {
     font-family: "NTR", sans-serif;
     color: var(--slate);
     font-size: 14px;
-    margin: 0 0 12px 0;
-    line-height: 1.5;
+     margin: 0 0 8px 0;
+    line-height: 1.35;
   }
   
   .mobile-tech {
@@ -220,12 +230,12 @@
     color: var(--green-bright);
     font-size: 12px;
     font-weight: bold;
-    margin: 0 0 16px 0;
+     margin: 0 0 8px 0;
   }
   
   .mobile-links {
     display: flex;
-    gap: 12px;
+     gap: 8px;
   }
   
   .carousel-control-prev,
