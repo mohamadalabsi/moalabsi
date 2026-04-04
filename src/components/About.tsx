@@ -32,7 +32,7 @@ class About extends React.Component<any, any> {
     );
     const two = (
       <p>
-        Outside of work, I like building things and discovering new technologies / AI tools and Agents , love Tv shows ,
+        Outside of work, I like building things and discovering new technologies / AI tools and Agents , love Tv shows
         and play Football. 
       </p>
     );
@@ -41,10 +41,10 @@ class About extends React.Component<any, any> {
       "Python",
       "Typescript",
       "React.js",
-      "NextJs",
+      "Next.js",
       "Node.js",
       "Java",
-      "spring boot",
+      "Spring Boot",
       "Javascript",
       "C/C++",
       "AWS",
