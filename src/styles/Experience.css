@@ -47,7 +47,7 @@
 .jss5 {
   background-color: var(--green-bright) !important;
 }
-.makeStyles-tabs-2 {
+.joblist-tabs {
   border-right: 1px solid var(--lightest-navy) !important;
 }
 #experience .MuiTab-root {
@@ -98,7 +98,7 @@ ul {
     padding-right: unset;
   }
 
-  .makeStyles-root-1 {
+  .joblist-root {
     height: unset !important;
     width: unset;
     flex-direction: column;
